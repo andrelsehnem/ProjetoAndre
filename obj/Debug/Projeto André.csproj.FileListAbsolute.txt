@@ -1,0 +1,10 @@
+D:\Dev\C#\Projeto\Projeto André\bin\Debug\Projeto André.exe.config
+D:\Dev\C#\Projeto\Projeto André\bin\Debug\Projeto André.exe
+D:\Dev\C#\Projeto\Projeto André\bin\Debug\Projeto André.pdb
+D:\Dev\C#\Projeto\Projeto André\obj\Debug\Projeto André.csprojAssemblyReference.cache
+D:\Dev\C#\Projeto\Projeto André\obj\Debug\Projeto_André.frm_menuPrincipal.resources
+D:\Dev\C#\Projeto\Projeto André\obj\Debug\Projeto_André.Properties.Resources.resources
+D:\Dev\C#\Projeto\Projeto André\obj\Debug\Projeto André.csproj.GenerateResource.cache
+D:\Dev\C#\Projeto\Projeto André\obj\Debug\Projeto André.csproj.CoreCompileInputs.cache
+D:\Dev\C#\Projeto\Projeto André\obj\Debug\Projeto André.exe
+D:\Dev\C#\Projeto\Projeto André\obj\Debug\Projeto André.pdb
