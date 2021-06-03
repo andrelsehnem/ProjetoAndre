@@ -68,7 +68,7 @@ namespace Projeto_André.Foms
             this.abas_login.SelectedIndex = 0;
             this.abas_login.Size = new System.Drawing.Size(266, 188);
             this.abas_login.TabIndex = 0;
-            this.abas_login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frm_login_KeyPress);
+            this.abas_login.KeyUp += new System.Windows.Forms.KeyEventHandler(this.abas_login_KeyUp);
             // 
             // aba_login
             // 

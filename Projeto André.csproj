@@ -114,24 +114,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Conexao.cs" />
-    <Compile Include="Foms\frm_login.cs">
+    <Compile Include="Forms\frm_clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Foms\frm_login.Designer.cs">
+    <Compile Include="Forms\frm_clientes.Designer.cs">
+      <DependentUpon>frm_clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Foms\frm_menuPrincipal.cs">
+    <Compile Include="Forms\frm_menuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Foms\frm_menuPrincipal.Designer.cs">
+    <Compile Include="Forms\frm_menuPrincipal.Designer.cs">
       <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Foms\frm_login.resx">
+    <EmbeddedResource Include="Forms\frm_clientes.resx">
+      <DependentUpon>frm_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Foms\frm_menuPrincipal.resx">
+    <EmbeddedResource Include="Forms\frm_menuPrincipal.resx">
       <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -144,6 +153,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Projeto_André.Classes.Conexao.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

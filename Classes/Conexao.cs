@@ -48,6 +48,7 @@ namespace Projeto_André.Classes
             {
                 MessageBox.Show(ex.ToString());
                 conectado = false;
+
             }
         }
 
@@ -60,6 +61,7 @@ namespace Projeto_André.Classes
             }
             catch (Exception ex)
             {
+                cnn.Close();
                 MessageBox.Show("Conexão não estabelecida, verifique as informações inseridas");
                 conectado = false;
                 MessageBox.Show(ex.ToString());
@@ -81,6 +83,8 @@ namespace Projeto_André.Classes
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                cnn.Close();
+
             }
 
             return reader.HasRows; //se existir retorna TRUE

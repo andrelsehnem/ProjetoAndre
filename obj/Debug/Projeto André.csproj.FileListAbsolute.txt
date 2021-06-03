@@ -46,3 +46,4 @@ D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Numerics.Vectors.xml
 D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csproj.CopyComplete
+D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Foms.frm_clientes.resources

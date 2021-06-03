@@ -50,6 +50,7 @@ namespace Projeto_André
             this.calendárioAniversariantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditoriaDeEstoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,6 @@ namespace Projeto_André
             this.emailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.logLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,13 +87,13 @@ namespace Projeto_André
             this.menu_cadastro.Name = "menu_cadastro";
             this.menu_cadastro.Size = new System.Drawing.Size(66, 20);
             this.menu_cadastro.Text = "Cadastro";
-            this.menu_cadastro.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem
             // 
@@ -187,7 +187,6 @@ namespace Projeto_André
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
             this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.estoqueToolStripMenuItem.Text = "Consulta";
-            this.estoqueToolStripMenuItem.Click += new System.EventHandler(this.estoqueToolStripMenuItem_Click);
             // 
             // oiToolStripMenuItem
             // 
@@ -221,6 +220,12 @@ namespace Projeto_André
             this.auditoriaDeEstoqueToolStripMenuItem.Name = "auditoriaDeEstoqueToolStripMenuItem";
             this.auditoriaDeEstoqueToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.auditoriaDeEstoqueToolStripMenuItem.Text = "Auditoria de Estoque";
+            // 
+            // logLoginToolStripMenuItem
+            // 
+            this.logLoginToolStripMenuItem.Name = "logLoginToolStripMenuItem";
+            this.logLoginToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.logLoginToolStripMenuItem.Text = "Log login";
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -280,13 +285,6 @@ namespace Projeto_André
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // logLoginToolStripMenuItem
-            // 
-            this.logLoginToolStripMenuItem.Name = "logLoginToolStripMenuItem";
-            this.logLoginToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.logLoginToolStripMenuItem.Text = "Log login";
-            this.logLoginToolStripMenuItem.Click += new System.EventHandler(this.logLoginToolStripMenuItem_Click);
-            // 
             // frm_menuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,8 +294,10 @@ namespace Projeto_André
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_menuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Projeto";
-            this.Load += new System.EventHandler(this.frm_menuPrincipal_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_menuPrincipal_FormClosing);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frm_menuPrincipal_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
