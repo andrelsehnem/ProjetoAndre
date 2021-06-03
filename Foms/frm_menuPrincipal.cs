@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projeto_André.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,9 @@ namespace Projeto_André
 {
     public partial class frm_menuPrincipal : Form
     {
-        public frm_menuPrincipal()
+        public Conexao infoBd = new Conexao();
+
+        public frm_menuPrincipal(Conexao temp_banco)
         {
             InitializeComponent();
         }
@@ -23,6 +26,11 @@ namespace Projeto_André
         }
 
         private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frm_menuPrincipal_Load(object sender, EventArgs e)
         {
 
         }

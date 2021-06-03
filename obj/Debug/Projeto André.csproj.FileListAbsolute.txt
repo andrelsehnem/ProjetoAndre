@@ -18,3 +18,4 @@ D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csproj.GenerateResource.
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csproj.CoreCompileInputs.cache
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.exe
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.pdb
+D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Foms.frm_login.resources

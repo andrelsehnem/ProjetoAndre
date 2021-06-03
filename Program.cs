@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Projeto_André.Foms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using MySqlConnector;
 
 namespace Projeto_André
 {
@@ -16,7 +19,7 @@ namespace Projeto_André
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_menuPrincipal());
+            Application.Run(new frm_login());
         }
     }
 }
