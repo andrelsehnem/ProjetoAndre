@@ -33,8 +33,8 @@ namespace Projeto_André.Foms
             this.aba_login = new System.Windows.Forms.TabPage();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.bt_login = new System.Windows.Forms.Button();
-            this.msk_senha = new System.Windows.Forms.MaskedTextBox();
-            this.txt_user = new System.Windows.Forms.TextBox();
+            this.msk_senhaLogin = new System.Windows.Forms.MaskedTextBox();
+            this.txt_userLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.aba_config = new System.Windows.Forms.TabPage();
@@ -42,16 +42,16 @@ namespace Projeto_André.Foms
             this.bt_salvar = new System.Windows.Forms.Button();
             this.txt_banco = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.msk_senhaServer = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_usuario = new System.Windows.Forms.TextBox();
+            this.txt_usuarioServer = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_servidor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.aba_criarBd = new System.Windows.Forms.TabPage();
-            this.label8 = new System.Windows.Forms.Label();
             this.bt_criaBd = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.abas_login.SuspendLayout();
             this.aba_login.SuspendLayout();
             this.aba_config.SuspendLayout();
@@ -74,8 +74,8 @@ namespace Projeto_André.Foms
             // 
             this.aba_login.Controls.Add(this.bt_fechar);
             this.aba_login.Controls.Add(this.bt_login);
-            this.aba_login.Controls.Add(this.msk_senha);
-            this.aba_login.Controls.Add(this.txt_user);
+            this.aba_login.Controls.Add(this.msk_senhaLogin);
+            this.aba_login.Controls.Add(this.txt_userLogin);
             this.aba_login.Controls.Add(this.label2);
             this.aba_login.Controls.Add(this.label1);
             this.aba_login.Location = new System.Drawing.Point(4, 22);
@@ -107,22 +107,22 @@ namespace Projeto_André.Foms
             this.bt_login.UseVisualStyleBackColor = true;
             this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
             // 
-            // msk_senha
+            // msk_senhaLogin
             // 
-            this.msk_senha.Location = new System.Drawing.Point(58, 77);
-            this.msk_senha.Name = "msk_senha";
-            this.msk_senha.PasswordChar = '*';
-            this.msk_senha.Size = new System.Drawing.Size(177, 20);
-            this.msk_senha.TabIndex = 3;
-            this.msk_senha.Text = "123";
+            this.msk_senhaLogin.Location = new System.Drawing.Point(58, 77);
+            this.msk_senhaLogin.Name = "msk_senhaLogin";
+            this.msk_senhaLogin.PasswordChar = '*';
+            this.msk_senhaLogin.Size = new System.Drawing.Size(177, 20);
+            this.msk_senhaLogin.TabIndex = 3;
+            this.msk_senhaLogin.Text = "123";
             // 
-            // txt_user
+            // txt_userLogin
             // 
-            this.txt_user.Location = new System.Drawing.Point(58, 44);
-            this.txt_user.Name = "txt_user";
-            this.txt_user.Size = new System.Drawing.Size(177, 20);
-            this.txt_user.TabIndex = 2;
-            this.txt_user.Text = "user";
+            this.txt_userLogin.Location = new System.Drawing.Point(58, 44);
+            this.txt_userLogin.Name = "txt_userLogin";
+            this.txt_userLogin.Size = new System.Drawing.Size(177, 20);
+            this.txt_userLogin.TabIndex = 2;
+            this.txt_userLogin.Text = "user";
             // 
             // label2
             // 
@@ -148,10 +148,10 @@ namespace Projeto_André.Foms
             this.aba_config.Controls.Add(this.bt_salvar);
             this.aba_config.Controls.Add(this.txt_banco);
             this.aba_config.Controls.Add(this.label7);
-            this.aba_config.Controls.Add(this.maskedTextBox1);
+            this.aba_config.Controls.Add(this.msk_senhaServer);
             this.aba_config.Controls.Add(this.label6);
             this.aba_config.Controls.Add(this.label5);
-            this.aba_config.Controls.Add(this.txt_usuario);
+            this.aba_config.Controls.Add(this.txt_usuarioServer);
             this.aba_config.Controls.Add(this.label4);
             this.aba_config.Controls.Add(this.txt_servidor);
             this.aba_config.Controls.Add(this.label3);
@@ -181,6 +181,7 @@ namespace Projeto_André.Foms
             this.bt_salvar.TabIndex = 10;
             this.bt_salvar.Text = "Salvar";
             this.bt_salvar.UseVisualStyleBackColor = true;
+            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
             // 
             // txt_banco
             // 
@@ -199,14 +200,14 @@ namespace Projeto_André.Foms
             this.label7.TabIndex = 8;
             this.label7.Text = "Banco";
             // 
-            // maskedTextBox1
+            // msk_senhaServer
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(126, 78);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PasswordChar = '*';
-            this.maskedTextBox1.Size = new System.Drawing.Size(113, 20);
-            this.maskedTextBox1.TabIndex = 7;
-            this.maskedTextBox1.Text = "vssql";
+            this.msk_senhaServer.Location = new System.Drawing.Point(126, 78);
+            this.msk_senhaServer.Name = "msk_senhaServer";
+            this.msk_senhaServer.PasswordChar = '*';
+            this.msk_senhaServer.Size = new System.Drawing.Size(113, 20);
+            this.msk_senhaServer.TabIndex = 7;
+            this.msk_senhaServer.Text = "vssql";
             // 
             // label6
             // 
@@ -226,13 +227,13 @@ namespace Projeto_André.Foms
             this.label5.TabIndex = 5;
             this.label5.Text = "Usuario";
             // 
-            // txt_usuario
+            // txt_usuarioServer
             // 
-            this.txt_usuario.Location = new System.Drawing.Point(7, 78);
-            this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(113, 20);
-            this.txt_usuario.TabIndex = 4;
-            this.txt_usuario.Text = "root";
+            this.txt_usuarioServer.Location = new System.Drawing.Point(7, 78);
+            this.txt_usuarioServer.Name = "txt_usuarioServer";
+            this.txt_usuarioServer.Size = new System.Drawing.Size(113, 20);
+            this.txt_usuarioServer.TabIndex = 4;
+            this.txt_usuarioServer.Text = "root";
             // 
             // label4
             // 
@@ -272,6 +273,17 @@ namespace Projeto_André.Foms
             this.aba_criarBd.Text = "Criar Banco";
             this.aba_criarBd.UseVisualStyleBackColor = true;
             // 
+            // bt_criaBd
+            // 
+            this.bt_criaBd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_criaBd.Location = new System.Drawing.Point(76, 86);
+            this.bt_criaBd.Name = "bt_criaBd";
+            this.bt_criaBd.Size = new System.Drawing.Size(107, 44);
+            this.bt_criaBd.TabIndex = 1;
+            this.bt_criaBd.Text = "Criar Banco de dados";
+            this.bt_criaBd.UseVisualStyleBackColor = true;
+            this.bt_criaBd.Click += new System.EventHandler(this.bt_criaBd_Click);
+            // 
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -284,17 +296,6 @@ namespace Projeto_André.Foms
     "o\" e informar os dados do servidor e o nome que será usado para o banco de dados" +
     "!";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bt_criaBd
-            // 
-            this.bt_criaBd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_criaBd.Location = new System.Drawing.Point(76, 86);
-            this.bt_criaBd.Name = "bt_criaBd";
-            this.bt_criaBd.Size = new System.Drawing.Size(107, 44);
-            this.bt_criaBd.TabIndex = 1;
-            this.bt_criaBd.Text = "Criar Banco de dados";
-            this.bt_criaBd.UseVisualStyleBackColor = true;
-            this.bt_criaBd.Click += new System.EventHandler(this.bt_criaBd_Click);
             // 
             // frm_login
             // 
@@ -323,8 +324,8 @@ namespace Projeto_André.Foms
         private System.Windows.Forms.TabPage aba_login;
         private System.Windows.Forms.Button bt_fechar;
         private System.Windows.Forms.Button bt_login;
-        private System.Windows.Forms.MaskedTextBox msk_senha;
-        private System.Windows.Forms.TextBox txt_user;
+        private System.Windows.Forms.MaskedTextBox msk_senhaLogin;
+        private System.Windows.Forms.TextBox txt_userLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage aba_config;
@@ -333,10 +334,10 @@ namespace Projeto_André.Foms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_banco;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox msk_senhaServer;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_usuario;
+        private System.Windows.Forms.TextBox txt_usuarioServer;
         private System.Windows.Forms.Button bt_salvar;
         private System.Windows.Forms.MaskedTextBox msk_porta;
         private System.Windows.Forms.TabPage aba_criarBd;

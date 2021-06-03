@@ -58,6 +58,7 @@ namespace Projeto_André
             this.emailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.logLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,7 +182,8 @@ namespace Projeto_André
             this.estoqueToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.oiToolStripMenuItem,
             this.logClienteToolStripMenuItem,
-            this.auditoriaDeEstoqueToolStripMenuItem});
+            this.auditoriaDeEstoqueToolStripMenuItem,
+            this.logLoginToolStripMenuItem});
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
             this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.estoqueToolStripMenuItem.Text = "Consulta";
@@ -278,6 +280,13 @@ namespace Projeto_André
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // logLoginToolStripMenuItem
+            // 
+            this.logLoginToolStripMenuItem.Name = "logLoginToolStripMenuItem";
+            this.logLoginToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.logLoginToolStripMenuItem.Text = "Log login";
+            this.logLoginToolStripMenuItem.Click += new System.EventHandler(this.logLoginToolStripMenuItem_Click);
+            // 
             // frm_menuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,6 +335,8 @@ namespace Projeto_André
         private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;    }
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem logLoginToolStripMenuItem;
+    }
 }
 

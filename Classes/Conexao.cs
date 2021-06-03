@@ -17,11 +17,14 @@ namespace Projeto_André.Classes
         public String senha = "admin";
         public String banco = "bancoProjeto";
         public String pcName = "";
+        public String userLogin = "";
+        public String senhaLogin = "";
         public String comando = "";
         public MySqlConnection cnn = new MySqlConnection();
         public MySqlCommand comandoProSql = new MySqlCommand();
         public MySqlDataReader reader;
         public Boolean conectado = false;
+        
 
 
         public void Execute()
@@ -39,14 +42,16 @@ namespace Projeto_André.Classes
                 cnn.Open();
                 comandoProSql.ExecuteNonQuery();
                 cnn.Close();
+                conectado = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                conectado = false;
             }
         }
 
-        public void ConectaBanco()
+        public void ConectaServer()
         {
             try
             {
@@ -61,6 +66,25 @@ namespace Projeto_André.Classes
                 return;
             }
             conectado = true;
+        }
+
+        private Boolean colunaExiste(String tabela, String coluna)
+        {
+
+            //essa função vai retornar se a coluna existe nesta tabela
+            ComandoSql("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" + banco + "' AND TABLE_NAME = '" + tabela + "' AND COLUMN_NAME = '" + coluna + "'");
+            try
+            {
+                cnn.Open();
+                reader = comandoProSql.ExecuteReader();
+                reader.Read();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return reader.HasRows; //se existir retorna TRUE
         }
     }
 }

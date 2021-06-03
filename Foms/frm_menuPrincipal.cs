@@ -34,5 +34,10 @@ namespace Projeto_André
         {
 
         }
+
+        private void logLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

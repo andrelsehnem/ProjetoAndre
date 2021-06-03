@@ -19,3 +19,30 @@ D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csproj.CoreCompileInputs
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.exe
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.pdb
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Foms.frm_login.resources
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\BouncyCastle.Crypto.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Google.Protobuf.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\K4os.Compression.LZ4.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\K4os.Hash.xxHash.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\MySql.Data.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\MySqlConnector.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Buffers.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Memory.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Numerics.Vectors.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Ubiety.Dns.Core.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Zstandard.Net.dll
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Google.Protobuf.pdb
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Google.Protobuf.xml
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\K4os.Compression.LZ4.xml
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\K4os.Hash.xxHash.xml
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\MySql.Data.xml
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\MySqlConnector.xml
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Buffers.xml
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Memory.xml
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Numerics.Vectors.xml
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csproj.CopyComplete
