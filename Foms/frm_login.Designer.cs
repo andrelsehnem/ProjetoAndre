@@ -276,7 +276,7 @@ namespace Projeto_André.Foms
             // bt_criaBd
             // 
             this.bt_criaBd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_criaBd.Location = new System.Drawing.Point(76, 86);
+            this.bt_criaBd.Location = new System.Drawing.Point(70, 85);
             this.bt_criaBd.Name = "bt_criaBd";
             this.bt_criaBd.Size = new System.Drawing.Size(107, 44);
             this.bt_criaBd.TabIndex = 1;

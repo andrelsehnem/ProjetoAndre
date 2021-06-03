@@ -68,11 +68,10 @@ namespace Projeto_André.Classes
             conectado = true;
         }
 
-        private Boolean colunaExiste(String tabela, String coluna)
+        public Boolean validaTabela(String cmd)
         {
-
             //essa função vai retornar se a coluna existe nesta tabela
-            ComandoSql("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" + banco + "' AND TABLE_NAME = '" + tabela + "' AND COLUMN_NAME = '" + coluna + "'");
+            ComandoSql(cmd);
             try
             {
                 cnn.Open();

@@ -53,10 +53,9 @@ namespace Projeto_André.Foms
             conex.Execute();
             conex.ConectaServer();
             conex.ComandoSql("use " + conex.banco);
-            if (conex.conectado)
+            if (conex.conectado && conex.validaTabela("select * from usuarios where user ='" + txt_userLogin.Text + "' and senha = '" + msk_senhaLogin.Text + "' and cancelado is null;"))//valida se foi conectado no banco e se o usuario e senha existem
             {
-                String comandoLogin = "insert into log_login (pc, usuario) VALUES('" + conex.pcName + "', '" + txt_userLogin.Text + "')";
-                conex.ComandoSql(comandoLogin);
+                conex.ComandoSql("insert into log_login (pc, usuario) VALUES('" + conex.pcName + "', '" + txt_userLogin.Text + "')");
                 frm_menuPrincipal frm = new frm_menuPrincipal(conex);
                 frm.Show();
                 conex.cnn.Close();
@@ -180,6 +179,10 @@ namespace Projeto_André.Foms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                MessageBox.Show("Configurações salvas.");
             }
         }
     }
