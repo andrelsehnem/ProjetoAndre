@@ -29,60 +29,108 @@ namespace Projeto_André.Foms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.conexaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.conexaoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conexaoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conexaoBindingSource1)).BeginInit();
+            this.bt_fechar = new System.Windows.Forms.Button();
+            this.grid_clientes = new System.Windows.Forms.DataGridView();
+            this.bt_adicionar = new System.Windows.Forms.Button();
+            this.combo_tipo = new System.Windows.Forms.ComboBox();
+            this.bt_listar = new System.Windows.Forms.Button();
+            this.combo_pesquisa = new System.Windows.Forms.ComboBox();
+            this.txt_pesquisa = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_clientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // bt_fechar
             // 
-            this.button1.Location = new System.Drawing.Point(540, 399);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Fechar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bt_fechar.Location = new System.Drawing.Point(540, 351);
+            this.bt_fechar.Name = "bt_fechar";
+            this.bt_fechar.Size = new System.Drawing.Size(97, 39);
+            this.bt_fechar.TabIndex = 0;
+            this.bt_fechar.Text = "Fechar";
+            this.bt_fechar.UseVisualStyleBackColor = true;
+            this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
             // 
-            // dataGridView1
+            // grid_clientes
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.dataGridView1.DataSource = this.conexaoBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(518, 349);
-            this.dataGridView1.TabIndex = 1;
+            this.grid_clientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.grid_clientes.EnableHeadersVisualStyles = false;
+            this.grid_clientes.Location = new System.Drawing.Point(12, 41);
+            this.grid_clientes.MultiSelect = false;
+            this.grid_clientes.Name = "grid_clientes";
+            this.grid_clientes.ReadOnly = true;
+            this.grid_clientes.Size = new System.Drawing.Size(518, 349);
+            this.grid_clientes.TabIndex = 1;
             // 
-            // conexaoBindingSource
+            // bt_adicionar
             // 
-            this.conexaoBindingSource.DataSource = typeof(Projeto_André.Classes.Conexao);
+            this.bt_adicionar.Location = new System.Drawing.Point(540, 41);
+            this.bt_adicionar.Name = "bt_adicionar";
+            this.bt_adicionar.Size = new System.Drawing.Size(97, 40);
+            this.bt_adicionar.TabIndex = 2;
+            this.bt_adicionar.Text = "Adicionar";
+            this.bt_adicionar.UseVisualStyleBackColor = true;
             // 
-            // conexaoBindingSource1
+            // combo_tipo
             // 
-            this.conexaoBindingSource1.DataSource = typeof(Projeto_André.Classes.Conexao);
+            this.combo_tipo.FormattingEnabled = true;
+            this.combo_tipo.Items.AddRange(new object[] {
+            "Ambos",
+            "Cliente",
+            "Funcionário"});
+            this.combo_tipo.Location = new System.Drawing.Point(372, 12);
+            this.combo_tipo.Name = "combo_tipo";
+            this.combo_tipo.Size = new System.Drawing.Size(91, 21);
+            this.combo_tipo.TabIndex = 3;
+            this.combo_tipo.Text = "Ambos";
             // 
-            // Column1
+            // bt_listar
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
+            this.bt_listar.Location = new System.Drawing.Point(469, 12);
+            this.bt_listar.Name = "bt_listar";
+            this.bt_listar.Size = new System.Drawing.Size(61, 23);
+            this.bt_listar.TabIndex = 4;
+            this.bt_listar.Text = "Listar";
+            this.bt_listar.UseVisualStyleBackColor = true;
+            this.bt_listar.Click += new System.EventHandler(this.bt_listar_Click);
+            // 
+            // combo_pesquisa
+            // 
+            this.combo_pesquisa.FormattingEnabled = true;
+            this.combo_pesquisa.Items.AddRange(new object[] {
+            "Código",
+            "Nome",
+            "CPF",
+            "Telefone",
+            "Endereço",
+            "Complemento",
+            "Bairro",
+            "Cidade",
+            "Estado"});
+            this.combo_pesquisa.Location = new System.Drawing.Point(13, 12);
+            this.combo_pesquisa.Name = "combo_pesquisa";
+            this.combo_pesquisa.Size = new System.Drawing.Size(107, 21);
+            this.combo_pesquisa.TabIndex = 5;
+            this.combo_pesquisa.Text = "Código";
+            // 
+            // txt_pesquisa
+            // 
+            this.txt_pesquisa.Location = new System.Drawing.Point(127, 12);
+            this.txt_pesquisa.Name = "txt_pesquisa";
+            this.txt_pesquisa.Size = new System.Drawing.Size(239, 20);
+            this.txt_pesquisa.TabIndex = 6;
             // 
             // frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 450);
+            this.ClientSize = new System.Drawing.Size(649, 416);
             this.ControlBox = false;
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txt_pesquisa);
+            this.Controls.Add(this.combo_pesquisa);
+            this.Controls.Add(this.bt_listar);
+            this.Controls.Add(this.combo_tipo);
+            this.Controls.Add(this.bt_adicionar);
+            this.Controls.Add(this.grid_clientes);
+            this.Controls.Add(this.bt_fechar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -94,19 +142,20 @@ namespace Projeto_André.Foms
             this.Text = "Projeto André";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frm_cliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conexaoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conexaoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_clientes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.BindingSource conexaoBindingSource1;
-        private System.Windows.Forms.BindingSource conexaoBindingSource;
+        private System.Windows.Forms.Button bt_fechar;
+        private System.Windows.Forms.Button bt_adicionar;
+        private System.Windows.Forms.ComboBox combo_tipo;
+        private System.Windows.Forms.Button bt_listar;
+        private System.Windows.Forms.DataGridView grid_clientes;
+        private System.Windows.Forms.ComboBox combo_pesquisa;
+        private System.Windows.Forms.TextBox txt_pesquisa;
     }
 }
