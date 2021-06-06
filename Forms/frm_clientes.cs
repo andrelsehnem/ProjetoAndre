@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Projeto_André.Classes;
+using Projeto_André.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,6 +97,12 @@ namespace Projeto_André.Foms
 
             selectCliente = temp_cmd;
             updateGrid(selectCliente);
+        }
+
+        private void bt_adicionar_Click(object sender, EventArgs e)
+        {
+            frm_novoCliente frm = new frm_novoCliente(conex);
+            frm.Show();
         }
     }
 }

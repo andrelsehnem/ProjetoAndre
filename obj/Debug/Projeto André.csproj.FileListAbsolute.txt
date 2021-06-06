@@ -47,3 +47,4 @@ D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Runtime.CompilerServices.Unsafe.
 D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csproj.CopyComplete
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Foms.frm_clientes.resources
+D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Forms.frm_novoCliente.resources

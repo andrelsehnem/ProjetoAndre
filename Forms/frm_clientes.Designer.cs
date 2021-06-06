@@ -68,6 +68,7 @@ namespace Projeto_André.Foms
             this.bt_adicionar.TabIndex = 2;
             this.bt_adicionar.Text = "Adicionar";
             this.bt_adicionar.UseVisualStyleBackColor = true;
+            this.bt_adicionar.Click += new System.EventHandler(this.bt_adicionar_Click);
             // 
             // combo_tipo
             // 
