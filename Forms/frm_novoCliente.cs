@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,11 +19,17 @@ namespace Projeto_André.Forms
         {
             InitializeComponent();
             conex = temp_conex;
+            
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bt_adicionar_Click(object sender, EventArgs e)
+        {
+            validaCPF();
         }
 
         private void check_funcionario_CheckedChanged(object sender, EventArgs e)
@@ -35,5 +42,6 @@ namespace Projeto_André.Forms
         {
             txt_uf.Text.ToUpper();
         }
+        
     }
 }

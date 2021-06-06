@@ -34,11 +34,11 @@ namespace Projeto_André.Forms
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.group_funcionario = new System.Windows.Forms.GroupBox();
-            this.check_funcionario = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.check_funcionario = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.msk_nascimento = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@ namespace Projeto_André.Forms
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_uf = new System.Windows.Forms.TextBox();
+            this.bt_adicionar = new System.Windows.Forms.Button();
             this.group_funcionario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,33 +111,13 @@ namespace Projeto_André.Forms
             this.group_funcionario.TabIndex = 5;
             this.group_funcionario.TabStop = false;
             // 
-            // check_funcionario
+            // textBox3
             // 
-            this.check_funcionario.AutoSize = true;
-            this.check_funcionario.Location = new System.Drawing.Point(12, 258);
-            this.check_funcionario.Name = "check_funcionario";
-            this.check_funcionario.Size = new System.Drawing.Size(81, 17);
-            this.check_funcionario.TabIndex = 6;
-            this.check_funcionario.Text = "Funcionário";
-            this.check_funcionario.UseVisualStyleBackColor = true;
-            this.check_funcionario.CheckedChanged += new System.EventHandler(this.check_funcionario_CheckedChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Usuário";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(7, 37);
-            this.textBox2.MaxLength = 20;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 20);
-            this.textBox2.TabIndex = 1;
+            this.textBox3.Location = new System.Drawing.Point(7, 81);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
+            this.textBox3.Size = new System.Drawing.Size(136, 20);
+            this.textBox3.TabIndex = 3;
             // 
             // label4
             // 
@@ -147,13 +128,33 @@ namespace Projeto_André.Forms
             this.label4.TabIndex = 2;
             this.label4.Text = "Senha";
             // 
-            // textBox3
+            // textBox2
             // 
-            this.textBox3.Location = new System.Drawing.Point(7, 81);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(136, 20);
-            this.textBox3.TabIndex = 3;
+            this.textBox2.Location = new System.Drawing.Point(7, 37);
+            this.textBox2.MaxLength = 20;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(136, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Usuário";
+            // 
+            // check_funcionario
+            // 
+            this.check_funcionario.AutoSize = true;
+            this.check_funcionario.Location = new System.Drawing.Point(12, 258);
+            this.check_funcionario.Name = "check_funcionario";
+            this.check_funcionario.Size = new System.Drawing.Size(81, 17);
+            this.check_funcionario.TabIndex = 6;
+            this.check_funcionario.Text = "Funcionário";
+            this.check_funcionario.UseVisualStyleBackColor = true;
+            this.check_funcionario.CheckedChanged += new System.EventHandler(this.check_funcionario_CheckedChanged);
             // 
             // label5
             // 
@@ -315,12 +316,23 @@ namespace Projeto_André.Forms
             this.txt_uf.TabIndex = 25;
             this.txt_uf.Leave += new System.EventHandler(this.txt_uf_Leave);
             // 
+            // bt_adicionar
+            // 
+            this.bt_adicionar.Location = new System.Drawing.Point(288, 301);
+            this.bt_adicionar.Name = "bt_adicionar";
+            this.bt_adicionar.Size = new System.Drawing.Size(104, 45);
+            this.bt_adicionar.TabIndex = 26;
+            this.bt_adicionar.Text = "Adicionar";
+            this.bt_adicionar.UseVisualStyleBackColor = true;
+            this.bt_adicionar.Click += new System.EventHandler(this.bt_adicionar_Click);
+            // 
             // frm_novoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 416);
             this.ControlBox = false;
+            this.Controls.Add(this.bt_adicionar);
             this.Controls.Add(this.txt_uf);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox1);
@@ -390,5 +402,6 @@ namespace Projeto_André.Forms
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_uf;
+        private System.Windows.Forms.Button bt_adicionar;
     }
 }
