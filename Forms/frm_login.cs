@@ -84,6 +84,7 @@ namespace Projeto_André.Foms
                 cmd = "CREATE DATABASE IF NOT EXISTS " + conex.banco;
                 conex.ComandoSql(cmd);
                 conex.ComandoSql("use " + conex.banco);
+                conex.cnn.Open();
                 criaTabelas();
             }
             catch
@@ -102,14 +103,14 @@ namespace Projeto_André.Foms
             //trigger para inserir o horario que foi logado
             conex.ComandoSql("CREATE TRIGGER if not exists dataLogin BEFORE INSERT ON log_login FOR EACH ROW SET NEW.data = NOW()");
             //Tabela de usuarios
-            conex.ComandoSql("create table if not exists usuarios (codigo int(4) not null auto_increment, user varchar(20) not null default 'user', senha varchar(20) not null default '', cancelado tinyint(1) null, codigoCliente` INT(4) NOT NULL, PRIMARY KEY(codigo))");
-            conex.ComandoSql("insert into usuarios (nome, senha,codigoCliente) values ('user', '123', 1)");
+            conex.ComandoSql("create table if not exists usuarios (codigo int(4) not null auto_increment, user varchar(20) not null default 'user', senha varchar(20) not null default '', cancelado tinyint(1) null, codigoCliente INT(4) NOT NULL, PRIMARY KEY(codigo))");
+            conex.ComandoSql("insert into usuarios (user, senha,codigoCliente) values ('user', '123', 1)");
             //tabela de clientes
-            conex.ComandoSql("create table if not exists clientes (codigo int(4) not null auto_increment, nome varchar(50), cpf VARCHAR(11), nascimento DATE, funcionario TINYINT(1) NULL, funcionarioUser VARCHAR(20), cancelado tinyint(1) null, endereco VARCHAR(50), numero INT(5), complemento VARCHAR(20), bairro VARCHAR(20), cidade VARCHAR(30), estado VARCHAR(2), telefone VARCHAR(11),adicionado DATETIME, usuarioAdicionou VARCHAR(20),alterado DATETIME, usuarioAlterou VARCHAR(20),PRIMARY KEY(codigo))");
+            conex.ComandoSql("create table if not exists clientes (codigo int(4) not null auto_increment, nome varchar(50), cpf VARCHAR(11), nascimento DATE, funcionario TINYINT(1) NULL, funcionarioUser VARCHAR(20), cancelado tinyint(1) null, endereco VARCHAR(50), numero INT(5), complemento VARCHAR(20), bairro VARCHAR(20), cidade VARCHAR(50), estado VARCHAR(2), telefone VARCHAR(11),adicionado DATETIME, usuarioAdicionou VARCHAR(20),alterado DATETIME, usuarioAlterou VARCHAR(20),PRIMARY KEY(codigo))");
             //trigger para quando adicionar usuario
-            conex.ComandoSql("DELIMITER // CREATE TRIGGER if not exists clienteInsert BEFORE INSERT ON clientes FOR EACH ROW BEGIN SET NEW.adicionado = SYSDATE();set new.usuarioAdicionou = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1) ;END ");
+            conex.ComandoSql("CREATE TRIGGER if not exists clienteInsert BEFORE INSERT ON clientes FOR EACH ROW BEGIN SET NEW.adicionado = SYSDATE();set new.usuarioAdicionou = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1) ;END ");
             //trigger para quando alterar usuario
-            conex.ComandoSql("DELIMITER // CREATE TRIGGER if not exists clienteUpdate BEFORE INSERT ON clientes FOR EACH ROW BEGIN SET NEW.adicionado = SYSDATE();set new.usuarioAdicionou = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1) ;END ");
+            conex.ComandoSql("CREATE TRIGGER if not exists clienteUpdate BEFORE INSERT ON clientes FOR EACH ROW BEGIN SET NEW.adicionado = SYSDATE();set new.usuarioAdicionou = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1) ;END ");
         }
 
         private void validaBanco()
