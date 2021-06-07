@@ -297,6 +297,7 @@ namespace Projeto_André
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Projeto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_menuPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.frm_menuPrincipal_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frm_menuPrincipal_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

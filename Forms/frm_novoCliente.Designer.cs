@@ -34,9 +34,9 @@ namespace Projeto_André.Forms
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.group_funcionario = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_senha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_usuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.check_funcionario = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@ namespace Projeto_André.Forms
             this.txt_bairro = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_cidade = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_uf = new System.Windows.Forms.TextBox();
             this.bt_adicionar = new System.Windows.Forms.Button();
@@ -100,9 +100,9 @@ namespace Projeto_André.Forms
             // 
             // group_funcionario
             // 
-            this.group_funcionario.Controls.Add(this.textBox3);
+            this.group_funcionario.Controls.Add(this.txt_senha);
             this.group_funcionario.Controls.Add(this.label4);
-            this.group_funcionario.Controls.Add(this.textBox2);
+            this.group_funcionario.Controls.Add(this.txt_usuario);
             this.group_funcionario.Controls.Add(this.label3);
             this.group_funcionario.Enabled = false;
             this.group_funcionario.Location = new System.Drawing.Point(12, 281);
@@ -111,13 +111,13 @@ namespace Projeto_André.Forms
             this.group_funcionario.TabIndex = 5;
             this.group_funcionario.TabStop = false;
             // 
-            // textBox3
+            // txt_senha
             // 
-            this.textBox3.Location = new System.Drawing.Point(7, 81);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(136, 20);
-            this.textBox3.TabIndex = 3;
+            this.txt_senha.Location = new System.Drawing.Point(7, 81);
+            this.txt_senha.Name = "txt_senha";
+            this.txt_senha.PasswordChar = '*';
+            this.txt_senha.Size = new System.Drawing.Size(136, 20);
+            this.txt_senha.TabIndex = 3;
             // 
             // label4
             // 
@@ -128,13 +128,13 @@ namespace Projeto_André.Forms
             this.label4.TabIndex = 2;
             this.label4.Text = "Senha";
             // 
-            // textBox2
+            // txt_usuario
             // 
-            this.textBox2.Location = new System.Drawing.Point(7, 37);
-            this.textBox2.MaxLength = 20;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 20);
-            this.textBox2.TabIndex = 1;
+            this.txt_usuario.Location = new System.Drawing.Point(7, 37);
+            this.txt_usuario.MaxLength = 20;
+            this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.Size = new System.Drawing.Size(136, 20);
+            this.txt_usuario.TabIndex = 1;
             // 
             // label3
             // 
@@ -148,7 +148,7 @@ namespace Projeto_André.Forms
             // check_funcionario
             // 
             this.check_funcionario.AutoSize = true;
-            this.check_funcionario.Location = new System.Drawing.Point(12, 258);
+            this.check_funcionario.Location = new System.Drawing.Point(12, 267);
             this.check_funcionario.Name = "check_funcionario";
             this.check_funcionario.Size = new System.Drawing.Size(81, 17);
             this.check_funcionario.TabIndex = 6;
@@ -194,7 +194,7 @@ namespace Projeto_André.Forms
             // msk_cpf
             // 
             this.msk_cpf.Location = new System.Drawing.Point(12, 74);
-            this.msk_cpf.Mask = "000.000.000-00";
+            this.msk_cpf.Mask = "00000000000";
             this.msk_cpf.Name = "msk_cpf";
             this.msk_cpf.Size = new System.Drawing.Size(122, 20);
             this.msk_cpf.TabIndex = 11;
@@ -291,12 +291,12 @@ namespace Projeto_André.Forms
             this.label11.TabIndex = 22;
             this.label11.Text = "Cidade";
             // 
-            // textBox1
+            // txt_cidade
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 232);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 20);
-            this.textBox1.TabIndex = 23;
+            this.txt_cidade.Location = new System.Drawing.Point(12, 232);
+            this.txt_cidade.Name = "txt_cidade";
+            this.txt_cidade.Size = new System.Drawing.Size(287, 20);
+            this.txt_cidade.TabIndex = 23;
             // 
             // label12
             // 
@@ -335,7 +335,7 @@ namespace Projeto_André.Forms
             this.Controls.Add(this.bt_adicionar);
             this.Controls.Add(this.txt_uf);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_cidade);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txt_bairro);
@@ -379,9 +379,9 @@ namespace Projeto_André.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox group_funcionario;
         private System.Windows.Forms.CheckBox check_funcionario;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_senha;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox msk_nascimento;
@@ -399,7 +399,7 @@ namespace Projeto_André.Forms
         private System.Windows.Forms.TextBox txt_bairro;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_cidade;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_uf;
         private System.Windows.Forms.Button bt_adicionar;

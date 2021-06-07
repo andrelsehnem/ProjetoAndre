@@ -40,5 +40,10 @@ namespace Projeto_André
                 MessageBox.Show("Você pressionou o F3.");
             }
         }
+
+        private void frm_menuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
