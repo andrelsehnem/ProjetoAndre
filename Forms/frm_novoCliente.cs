@@ -46,33 +46,106 @@ namespace Projeto_André.Forms
 
         private void bt_adicionar_Click(object sender, EventArgs e)
         {
+            String camposSql = "";
+            String valoresSql = "";
+            String insertFuncionario = "";
             if (txt_nome.Text == "")
             {
                 MessageBox.Show("Insira um nome.");
                 return;
+            }
+            else
+            {
+                camposSql = "nome";
+                valoresSql = "'" + txt_nome.Text + "'";
             }
             if (!validaCPF(msk_cpf.Text))
             {
                 MessageBox.Show("Informe um CPF válido!");
                 return;
             }
-            
-            //if cpf já cadastrado
-
+            conex.ComandoSql("select codigo from clientes where cpf = '" + msk_cpf.Text + "'");
+            conex.cnn.Open();
+            reader = conex.comandoProSql.ExecuteReader();
+            reader.Read();
+            if (reader.HasRows)
+            {
+                MessageBox.Show("Este CPF já está cadastrado.");
+                return;
+            }
+            else
+            {
+                camposSql = camposSql + ",cpf";
+                valoresSql = valoresSql +  ",'" +  msk_cpf.Text + "'";
+            }
+            reader.Close();
+            if (data_nascimento.Checked)
+            {
+                data_nascimento.Format = DateTimePickerFormat.Custom;
+                String data = data_nascimento.Text;
+                data_nascimento.Format = DateTimePickerFormat.Short;
+                camposSql = camposSql + ",nascimento";
+                valoresSql = valoresSql + ",'" + data + "'";
+            }
             if (check_funcionario.Checked)
             {
                 if (txt_usuario.Text == "" || txt_senha.Text == "")
                 {
                     MessageBox.Show("Selecionado para ser funcionário, necessário informar usuário e senha válidos");
+                    return;
                 }
+                conex.ComandoSql("select codigo from usuarios where user = '" + txt_usuario.Text + "'");
+                conex.cnn.Open();
+                reader = conex.comandoProSql.ExecuteReader();
+                reader.Read();
+                if (reader.HasRows)
+                {
+                    MessageBox.Show("Username já cadastrado, informe outro.");
+                    return;
+                }
+                reader.Close();
+                camposSql = camposSql + "',funcionario, funcionarioUser'";
+                valoresSql = valoresSql + ", 1, '" + txt_usuario.Text + "'"; 
+                insertFuncionario = "insert into usuarios (user,senha,codigoCliente) values ('" + txt_usuario.Text + "','" + txt_senha.Text + "'," + txt_codigo.Text + ")";
             }
-
-            //if funcionário já existe
-            MessageBox.Show("insert into clientes (nome, cpf, nascimento, funcionario, funcionarioUser, cancelado, endereco, numero, complemento, bairro, cidade, estado, telefone) values ('" + txt_nome.Text + "', '" + msk_cpf.Text + "', " + msk_nascimento.Text + ", " + check_funcionario.Checked + ", '" + txt_usuario.Text + "', " + 0 + ",'" + txt_endereco.Text + "'," + Convert.ToInt32(msk_numero.Text) + ",'" + txt_complemento.Text + "',' " + txt_bairro.Text + "','" + txt_cidade.Text + "','" + txt_uf.Text + "','" + msk_telefone.Text + "'");
-
-            //conex.ComandoSql("insert into clientes (nome, cpf, nascimento, funcionario, funcionarioUser, cancelado, endereco, numero, complemento, bairro, cidade, estado, telefone) values ('" + txt_nome.Text + "', '" + msk_cpf.Text + "', " + Convert.ToDateTime(msk_nascimento.Text) + ", " + check_funcionario.Checked + ", '"+ txt_usuario.Text + "', " + 0 + ",'"+ txt_endereco.Text + "'," + Convert.ToInt32(msk_numero.Text) + ",'" + txt_complemento.Text + "',' " + txt_bairro.Text + "','" + txt_cidade.Text + "','"+ txt_uf.Text + "','" + msk_telefone.Text + "'" );
+            if (txt_endereco.Text != "")
+            {
+                camposSql = camposSql + ",endereco";
+                valoresSql = valoresSql + ",'" + txt_endereco.Text + "'";
+            }
+            if (msk_numero.Text != "")
+            {
+                camposSql = camposSql + ",numero";
+                valoresSql = valoresSql + "," + Convert.ToInt32(msk_numero.Text);
+            }
+            if (txt_complemento.Text != "")
+            {
+                camposSql = camposSql + ",complemento";
+                valoresSql = valoresSql + ",'" + txt_complemento.Text +"'";
+            }
+            if (txt_bairro.Text != "")
+            {
+                camposSql = camposSql + ",bairro";
+                valoresSql = valoresSql + ",'" + txt_bairro.Text + "'";
+            }
+            if (txt_cidade.Text != "")
+            {
+                camposSql = camposSql + ",cidade";
+                valoresSql = valoresSql + ",'" + txt_cidade.Text + "'";
+            }
+            if (txt_uf.Text != "")
+            {
+                camposSql = camposSql + ",uf";
+                valoresSql = valoresSql + ",'" + txt_uf.Text + "'";
+            }
+            if (msk_telefone.Text != "(  )      -")
+            {
+                camposSql = camposSql + ",telefone";
+                valoresSql = valoresSql + ",'" + msk_telefone.Text + "'";
+            }
             
-            //insert into TABELA (campos) values (valores)
+            conex.ComandoSql("insert into clientes (" + camposSql + ") values (" + valoresSql + ")");
+            if (check_funcionario.Checked) conex.ComandoSql(insertFuncionario);
         }
 
         private void check_funcionario_CheckedChanged(object sender, EventArgs e)
@@ -85,6 +158,7 @@ namespace Projeto_André.Forms
         {
             txt_uf.Text.ToUpper();
         }
+       
 
         public bool validaCPF(string CPFtest)
         { //SE RETORNAR TRUE É CPF VALIDO
@@ -157,6 +231,11 @@ namespace Projeto_André.Forms
                 return (true);
             else
                 return (false);
+        }
+
+        private void frm_novoCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

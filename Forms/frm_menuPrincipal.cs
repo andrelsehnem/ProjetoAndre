@@ -37,7 +37,8 @@ namespace Projeto_André
         {
             if (e.KeyCode == Keys.F3)
             {
-                MessageBox.Show("Você pressionou o F3.");
+                frm_clientes frm = new frm_clientes(conex);
+                frm.Show();
             }
         }
 
