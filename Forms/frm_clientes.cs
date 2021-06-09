@@ -16,7 +16,9 @@ namespace Projeto_André.Foms
     public partial class frm_clientes : Form
     {
         public Conexao conex;
+        public MySqlDataReader reader;
         public String selectCliente = "select codigo as Cod, nome as Nome, cpf as CPF from clientes where cancelado is null ";
+
 
         public frm_clientes(Conexao temp_conex)
         {
@@ -103,6 +105,22 @@ namespace Projeto_André.Foms
         {
             frm_novoCliente frm = new frm_novoCliente(conex);
             frm.Show();
+        }
+
+        private void bt_excluir_Click(object sender, EventArgs e)
+        {
+            String campo = "";
+            var teste = grid_clientes.CurrentCell.EditedFormattedValue; //pega o valor da celular
+            var teste2 = grid_clientes.CurrentCell;
+            MessageBox.Show(teste2.OwningColumn.Name);
+            // if o de cima = nome busca pelo nome e altera pra cancelado depois de confirmar
+            //if codigo busca pelo codigo, etc
+           
+            conex.ComandoSql("select * from clientes where " + campo + " = " + teste );
+            conex.cnn.Open();
+            reader = conex.comandoProSql.ExecuteReader();
+            reader.Read();
+            reader.Close();
         }
     }
 }

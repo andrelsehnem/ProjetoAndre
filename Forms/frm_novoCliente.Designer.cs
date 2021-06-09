@@ -324,7 +324,7 @@ namespace Projeto_André.Forms
             // 
             // data_nascimento
             // 
-            this.data_nascimento.CustomFormat = "yyyy-mm-dd";
+            this.data_nascimento.CustomFormat = "yyyy-MM-dd";
             this.data_nascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.data_nascimento.Location = new System.Drawing.Point(147, 63);
             this.data_nascimento.Name = "data_nascimento";

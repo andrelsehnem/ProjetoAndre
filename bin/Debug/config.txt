@@ -1,5 +1,5 @@
 localhost
-3306
+3307
 root
-admin
+vssql
 bancoProjeto
