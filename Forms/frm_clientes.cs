@@ -109,14 +109,24 @@ namespace Projeto_André.Foms
 
         private void bt_excluir_Click(object sender, EventArgs e)
         {
-            String campo = "";
-            var teste = grid_clientes.CurrentCell.EditedFormattedValue; //pega o valor da celular
-            var teste2 = grid_clientes.CurrentCell;
-            MessageBox.Show(teste2.OwningColumn.Name);
+            var valorCelula = grid_clientes.CurrentCell.EditedFormattedValue; //pega o valor da celular
+            var celula = grid_clientes.CurrentCell;
+            string coluna = celula.OwningColumn.Name;
+            string cmd = "select * from clientes where ";
             // if o de cima = nome busca pelo nome e altera pra cancelado depois de confirmar
-            //if codigo busca pelo codigo, etc
-           
-            conex.ComandoSql("select * from clientes where " + campo + " = " + teste );
+            //if ccodigo as Cod, nome as Nome, cpf as CPF
+            if (coluna == "Cod")
+            {
+                cmd = cmd + "codigo = " + valorCelula;
+            }else if (coluna == "Nome")
+            { //aqui tem que buscar pelo nome ou cpf pq nome pode ter igual
+                // celula.OwningColumn.Index vai ser = 1
+                var a321 = grid_clientes.CurrentRow
+            }else if (coluna == "CPF")
+            {
+                cmd = cmd + "cpf = " + valorCelula;
+            }
+            conex.ComandoSql(cmd);
             conex.cnn.Open();
             reader = conex.comandoProSql.ExecuteReader();
             reader.Read();

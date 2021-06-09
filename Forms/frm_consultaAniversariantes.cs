@@ -44,7 +44,7 @@ namespace Projeto_André.Forms
 
 
 
-            setSelect(periodo, usuario);
+            //setSelect(periodo, usuario);
         }
     }
 }
