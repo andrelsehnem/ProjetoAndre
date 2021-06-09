@@ -40,7 +40,7 @@ namespace Projeto_André.Foms
                 da.Fill(ds);
                 grid_clientes.DataSource = ds;
                 grid_clientes.DataMember = ds.Tables[0].TableName;
-            }   
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -63,9 +63,9 @@ namespace Projeto_André.Foms
         private void bt_listar_Click(object sender, EventArgs e)
         {
             String pesquisa = "", tipo = "";
-            
+
             if (combo_tipo.Text == "Cliente") tipo = " and funcionario is null ";
-            else if (combo_tipo.Text == "Funcionário")tipo = " and funcionario = 1 ";
+            else if (combo_tipo.Text == "Funcionário") tipo = " and funcionario = 1 ";
             else tipo = "";
 
             if (txt_pesquisa.Text == "") pesquisa = "";
@@ -79,7 +79,7 @@ namespace Projeto_André.Foms
             else if (combo_pesquisa.Text == "Cidade") pesquisa = "and cidade like '%" + txt_pesquisa.Text + "%' ";
             else if (combo_pesquisa.Text == "Estado") pesquisa = "and estado like '%" + txt_pesquisa.Text + "%' ";
             else pesquisa = "";
-                
+
             setSelect(pesquisa, tipo);
         }
 
@@ -106,3 +106,4 @@ namespace Projeto_André.Foms
         }
     }
 }
+

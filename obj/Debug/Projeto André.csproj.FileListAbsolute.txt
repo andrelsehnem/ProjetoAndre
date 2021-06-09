@@ -11,7 +11,6 @@ D:\Dev\C#\Projeto\Projeto André\obj\Debug\Projeto André.pdb
 D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Projeto André.exe.config
 D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Projeto André.exe
 D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Projeto André.pdb
-D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csprojAssemblyReference.cache
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.frm_menuPrincipal.resources
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Properties.Resources.resources
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csproj.GenerateResource.cache
@@ -48,3 +47,4 @@ D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csproj.CopyComplete
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Foms.frm_clientes.resources
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Forms.frm_novoCliente.resources
+D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Forms.frm_loglogin.resources
