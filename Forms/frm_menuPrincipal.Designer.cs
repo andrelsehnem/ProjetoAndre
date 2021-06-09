@@ -202,6 +202,7 @@ namespace Projeto_André
             this.consultaAniversariantesToolStripMenuItem.Name = "consultaAniversariantesToolStripMenuItem";
             this.consultaAniversariantesToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.consultaAniversariantesToolStripMenuItem.Text = "Consulta Aniversariantes";
+            this.consultaAniversariantesToolStripMenuItem.Click += new System.EventHandler(this.consultaAniversariantesToolStripMenuItem_Click);
             // 
             // calendárioAniversariantesToolStripMenuItem
             // 
@@ -226,6 +227,7 @@ namespace Projeto_André
             this.logLoginToolStripMenuItem.Name = "logLoginToolStripMenuItem";
             this.logLoginToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.logLoginToolStripMenuItem.Text = "Log login";
+            this.logLoginToolStripMenuItem.Click += new System.EventHandler(this.logLoginToolStripMenuItem_Click);
             // 
             // relatóriosToolStripMenuItem
             // 

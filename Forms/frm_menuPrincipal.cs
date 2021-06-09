@@ -1,5 +1,6 @@
 ﻿using Projeto_André.Classes;
 using Projeto_André.Foms;
+using Projeto_André.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,18 @@ namespace Projeto_André
         private void frm_menuPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void logLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_loglogin frm = new frm_loglogin(conex);
+            frm.Show();
+        }
+
+        private void consultaAniversariantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_consultaAniversariantes frm = new frm_consultaAniversariantes(conex);
+            frm.Show();
         }
     }
 }

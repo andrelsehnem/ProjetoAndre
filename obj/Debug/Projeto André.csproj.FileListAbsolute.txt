@@ -11,7 +11,6 @@ D:\Dev\C#\Projeto\Projeto André\obj\Debug\Projeto André.pdb
 D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Projeto André.exe.config
 D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Projeto André.exe
 D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\Projeto André.pdb
-D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csprojAssemblyReference.cache
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.frm_menuPrincipal.resources
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Properties.Resources.resources
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csproj.GenerateResource.cache
@@ -48,43 +47,4 @@ D:\Dev\C#\Projeto\ProjetoAndre\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csproj.CopyComplete
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Foms.frm_clientes.resources
 D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Forms.frm_novoCliente.resources
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\Projeto André.exe.config
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\Projeto André.exe
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\Projeto André.pdb
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\BouncyCastle.Crypto.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\Google.Protobuf.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\K4os.Compression.LZ4.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\K4os.Compression.LZ4.Streams.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\K4os.Hash.xxHash.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\MySql.Data.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\MySqlConnector.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Buffers.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Memory.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Numerics.Vectors.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Threading.Tasks.Extensions.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\Ubiety.Dns.Core.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\Zstandard.Net.dll
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\Google.Protobuf.pdb
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\Google.Protobuf.xml
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\K4os.Compression.LZ4.xml
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\K4os.Compression.LZ4.Streams.xml
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\K4os.Hash.xxHash.xml
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\MySql.Data.xml
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\MySqlConnector.xml
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Buffers.xml
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Memory.xml
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Numerics.Vectors.xml
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Threading.Tasks.Extensions.xml
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto André.csprojAssemblyReference.cache
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto_André.Foms.frm_clientes.resources
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto_André.Foms.frm_login.resources
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto_André.frm_menuPrincipal.resources
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto_André.Forms.frm_novoCliente.resources
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto_André.Properties.Resources.resources
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto André.csproj.GenerateResource.cache
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto André.csproj.CoreCompileInputs.cache
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto André.csproj.CopyComplete
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto André.exe
-E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto André.pdb
+D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Forms.frm_loglogin.resources
