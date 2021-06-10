@@ -17,26 +17,36 @@ namespace Projeto_André.Forms
     {
         public Conexao conex;
         public MySqlDataReader reader;
-        public frm_novoCliente(Conexao temp_conex)
+        int codigo;
+        public frm_novoCliente(Conexao temp_conex, int temp_codigo, Boolean novo)
         {
             InitializeComponent();
             conex = temp_conex;
-            try
+            if (novo)
             {
-                conex.ComandoSql("select codigo from clientes order by codigo desc limit 1");
-                conex.cnn.Open();
-                reader = conex.comandoProSql.ExecuteReader();
-                reader.Read();
-                int codigo = 1;
-                if (reader.HasRows) codigo = Convert.ToInt32(reader.GetString(0)) + 1;
-                reader.Close();
-                txt_codigo.Text = " " + codigo;
+                try
+                {
+                    conex.ComandoSql("select codigo from clientes order by codigo desc limit 1");
+                    conex.cnn.Open();
+                    reader = conex.comandoProSql.ExecuteReader();
+                    reader.Read();
+                    if (reader.HasRows) codigo = Convert.ToInt32(reader.GetString(0)) + 1;
+                    else codigo = 1;
+                    reader.Close();
+                   
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                codigo = temp_codigo;
+                alteraCliente();
             }
-            
+            txt_codigo.Text = " " + codigo;
+
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)
@@ -107,6 +117,7 @@ namespace Projeto_André.Forms
                 camposSql = camposSql + "',funcionario, funcionarioUser'";
                 valoresSql = valoresSql + ", 1, '" + txt_usuario.Text + "'"; 
                 insertFuncionario = "insert into usuarios (user,senha,codigoCliente) values ('" + txt_usuario.Text + "','" + txt_senha.Text + "'," + txt_codigo.Text + ")";
+                
             }
             if (txt_endereco.Text != "")
             {
@@ -146,6 +157,9 @@ namespace Projeto_André.Forms
             
             conex.ComandoSql("insert into clientes (" + camposSql + ") values (" + valoresSql + ")");
             if (check_funcionario.Checked) conex.ComandoSql(insertFuncionario);
+
+            MessageBox.Show("Cliente Adicionado!");
+            this.Close();
         }
 
         private void check_funcionario_CheckedChanged(object sender, EventArgs e)
@@ -159,7 +173,6 @@ namespace Projeto_André.Forms
             txt_uf.Text.ToUpper();
         }
        
-
         public bool validaCPF(string CPFtest)
         { //SE RETORNAR TRUE É CPF VALIDO
             if (CPFtest == "")
@@ -236,6 +249,26 @@ namespace Projeto_André.Forms
         private void frm_novoCliente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void aba_principal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alteraCliente()
+        {
+            //tem que adicionar as coisas do COMPLEMENTAR tbm
+            conex.ComandoSql("select * from usuarios where codigo = " + codigo);
+            conex.cnn.Open();
+            reader = conex.comandoProSql.ExecuteReader();
+            reader.Read();
+
+            txt_nome.Text = reader.GetString(0);
+            msk_cpf.Text = reader.GetString(1);
+
+
+            reader.Close();
         }
     }
 }

@@ -122,7 +122,7 @@ namespace Projeto_André.Foms
             // 
             // bt_excluir
             // 
-            this.bt_excluir.Location = new System.Drawing.Point(540, 88);
+            this.bt_excluir.Location = new System.Drawing.Point(540, 134);
             this.bt_excluir.Name = "bt_excluir";
             this.bt_excluir.Size = new System.Drawing.Size(97, 37);
             this.bt_excluir.TabIndex = 7;

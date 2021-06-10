@@ -90,3 +90,5 @@ E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Numerics.Vectors.xml
 E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\Documentos\Projetos C#\ProjetoAndre\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\Documentos\Projetos C#\ProjetoAndre\obj\Debug\Projeto André.csproj.CopyComplete
+D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto André.csprojAssemblyReference.cache
+D:\Dev\C#\Projeto\ProjetoAndre\obj\Debug\Projeto_André.Forms.frm_consultaAniversariantes.resources

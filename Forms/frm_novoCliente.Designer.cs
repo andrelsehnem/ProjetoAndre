@@ -318,7 +318,7 @@ namespace Projeto_André.Forms
             this.bt_adicionar.Name = "bt_adicionar";
             this.bt_adicionar.Size = new System.Drawing.Size(104, 45);
             this.bt_adicionar.TabIndex = 26;
-            this.bt_adicionar.Text = "Adicionar";
+            this.bt_adicionar.Text = "Gravar";
             this.bt_adicionar.UseVisualStyleBackColor = true;
             this.bt_adicionar.Click += new System.EventHandler(this.bt_adicionar_Click);
             // 
@@ -377,6 +377,7 @@ namespace Projeto_André.Forms
             this.aba_principal.TabIndex = 0;
             this.aba_principal.Text = "Principal";
             this.aba_principal.UseVisualStyleBackColor = true;
+            this.aba_principal.Click += new System.EventHandler(this.aba_principal_Click);
             // 
             // aba_complementar
             // 

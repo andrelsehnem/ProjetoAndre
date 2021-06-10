@@ -103,34 +103,19 @@ namespace Projeto_André.Foms
 
         private void bt_adicionar_Click(object sender, EventArgs e)
         {
-            frm_novoCliente frm = new frm_novoCliente(conex);
+            frm_novoCliente frm = new frm_novoCliente(conex, 0, true);
             frm.Show();
         }
 
         private void bt_excluir_Click(object sender, EventArgs e)
         {
-            var valorCelula = grid_clientes.CurrentCell.EditedFormattedValue; //pega o valor da celular
-            var celula = grid_clientes.CurrentCell;
-            string coluna = celula.OwningColumn.Name;
-            string cmd = "select * from clientes where ";
-            // if o de cima = nome busca pelo nome e altera pra cancelado depois de confirmar
-            //if ccodigo as Cod, nome as Nome, cpf as CPF
-            if (coluna == "Cod")
-            {
-                cmd = cmd + "codigo = " + valorCelula;
-            }else if (coluna == "Nome")
-            { //aqui tem que buscar pelo nome ou cpf pq nome pode ter igual
-                // celula.OwningColumn.Index vai ser = 1
-                var a321 = grid_clientes.CurrentRow
-            }else if (coluna == "CPF")
-            {
-                cmd = cmd + "cpf = " + valorCelula;
-            }
+            string cmd = "select * from clientes where codigo = " + grid_clientes.CurrentRow.Cells[0].Value.ToString();
             conex.ComandoSql(cmd);
             conex.cnn.Open();
             reader = conex.comandoProSql.ExecuteReader();
             reader.Read();
             reader.Close();
+            MessageBox.Show(cmd);
         }
     }
 }

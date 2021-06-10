@@ -37,7 +37,6 @@ namespace Projeto_André.Forms
                 reader.Read();
                 while (reader.HasRows)
                 {
-                    
                     combo_usuarios.Items.Add(reader.GetString(0));
                     reader.NextResult();
 
