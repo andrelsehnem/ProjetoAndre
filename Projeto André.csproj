@@ -113,6 +113,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Metodos.cs" />
     <Compile Include="Classes\Conexao.cs" />
     <Compile Include="Forms\frm_consultaAniversariantes.cs">
       <SubType>Form</SubType>

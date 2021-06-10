@@ -37,6 +37,7 @@ namespace Projeto_André.Foms
             this.combo_pesquisa = new System.Windows.Forms.ComboBox();
             this.txt_pesquisa = new System.Windows.Forms.TextBox();
             this.bt_excluir = new System.Windows.Forms.Button();
+            this.bt_editar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid_clientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,7 +123,7 @@ namespace Projeto_André.Foms
             // 
             // bt_excluir
             // 
-            this.bt_excluir.Location = new System.Drawing.Point(540, 134);
+            this.bt_excluir.Location = new System.Drawing.Point(540, 132);
             this.bt_excluir.Name = "bt_excluir";
             this.bt_excluir.Size = new System.Drawing.Size(97, 37);
             this.bt_excluir.TabIndex = 7;
@@ -130,12 +131,23 @@ namespace Projeto_André.Foms
             this.bt_excluir.UseVisualStyleBackColor = true;
             this.bt_excluir.Click += new System.EventHandler(this.bt_excluir_Click);
             // 
+            // bt_editar
+            // 
+            this.bt_editar.Location = new System.Drawing.Point(540, 87);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Size = new System.Drawing.Size(97, 39);
+            this.bt_editar.TabIndex = 8;
+            this.bt_editar.Text = "Editar";
+            this.bt_editar.UseVisualStyleBackColor = true;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
+            // 
             // frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 416);
             this.ControlBox = false;
+            this.Controls.Add(this.bt_editar);
             this.Controls.Add(this.bt_excluir);
             this.Controls.Add(this.txt_pesquisa);
             this.Controls.Add(this.combo_pesquisa);
@@ -171,5 +183,6 @@ namespace Projeto_André.Foms
         private System.Windows.Forms.ComboBox combo_pesquisa;
         private System.Windows.Forms.TextBox txt_pesquisa;
         private System.Windows.Forms.Button bt_excluir;
+        private System.Windows.Forms.Button bt_editar;
     }
 }

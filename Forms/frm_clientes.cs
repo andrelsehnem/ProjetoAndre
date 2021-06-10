@@ -117,6 +117,12 @@ namespace Projeto_André.Foms
             reader.Close();
             MessageBox.Show(cmd);
         }
+
+        private void bt_editar_Click(object sender, EventArgs e)
+        {
+            frm_novoCliente frm = new frm_novoCliente(conex, Convert.ToInt32(grid_clientes.CurrentRow.Cells[0].Value.ToString()), false);
+            frm.Show();
+        }
     }
 }
 

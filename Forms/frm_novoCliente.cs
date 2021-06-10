@@ -18,10 +18,13 @@ namespace Projeto_André.Forms
         public Conexao conex;
         public MySqlDataReader reader;
         int codigo;
-        public frm_novoCliente(Conexao temp_conex, int temp_codigo, Boolean novo)
+        public Boolean novo;
+
+        public frm_novoCliente(Conexao temp_conex, int temp_codigo, Boolean temp_novo)
         {
             InitializeComponent();
             conex = temp_conex;
+            novo = temp_novo;
             if (novo)
             {
                 try
@@ -56,6 +59,128 @@ namespace Projeto_André.Forms
 
         private void bt_adicionar_Click(object sender, EventArgs e)
         {
+            if (novo)
+            {
+                adicionaCliente();
+            }
+            else
+            {
+                editaCliente();
+            }
+        }
+
+        private void adicionaCliente()
+        {
+            String camposSql = "";
+            String valoresSql = "";
+            String insertFuncionario = "";
+            if (txt_nome.Text == "")
+            {
+                MessageBox.Show("Insira um nome.");
+                return;
+            }
+            else
+            {
+                camposSql = "nome";
+                valoresSql = "'" + txt_nome.Text + "'";
+            }
+            if (!validaCPF(msk_cpf.Text))
+            {
+                MessageBox.Show("Informe um CPF válido!");
+                return;
+            }
+            conex.ComandoSql("select codigo from clientes where cpf = '" + msk_cpf.Text + "' and codigo not in (" + codigo +")");
+            conex.cnn.Open();
+            reader = conex.comandoProSql.ExecuteReader();
+            reader.Read();
+            if (reader.HasRows)
+            {
+                MessageBox.Show("Este CPF já está cadastrado.");
+                return;
+            }
+            else
+            {
+                camposSql = camposSql + ",cpf";
+                valoresSql = valoresSql + ",'" + msk_cpf.Text + "'";
+            }
+            reader.Close();
+            if (data_nascimento.Checked)
+            {
+                camposSql = camposSql + ",nascimento";
+                valoresSql = valoresSql + ",'" + Metodos.getStringData(data_nascimento) + "'";
+            }
+            if (check_funcionario.Checked)
+            {
+                if (txt_usuario.Text == "" || txt_senha.Text == "")
+                {
+                    MessageBox.Show("Selecionado para ser funcionário, necessário informar usuário e senha válidos");
+                    return;
+                }
+                conex.ComandoSql("select codigo from usuarios where cancelado is null and codigoCliente not in (" + codigo + ") and user = '" + txt_usuario.Text + "'");
+                conex.cnn.Open();
+                reader = conex.comandoProSql.ExecuteReader();
+                reader.Read();
+                if (reader.HasRows)
+                {
+                    MessageBox.Show("Username já cadastrado, informe outro.");
+                    return;
+                }
+                reader.Close();
+                camposSql = camposSql + ",funcionario, funcionarioUser";
+                valoresSql = valoresSql + ", 1, '" + txt_usuario.Text + "'";
+                insertFuncionario = "update usuarios set (user,senha,codigoCliente) values ('" + txt_usuario.Text + "','" + txt_senha.Text + "'," + txt_codigo.Text + ")";
+
+            }
+            if (txt_endereco.Text != "")
+            {
+                camposSql = camposSql + ",endereco";
+                valoresSql = valoresSql + ",'" + txt_endereco.Text + "'";
+            }
+            if (msk_numero.Text != "")
+            {
+                camposSql = camposSql + ",numero";
+                valoresSql = valoresSql + "," + Convert.ToInt32(msk_numero.Text);
+            }
+            if (txt_complemento.Text != "")
+            {
+                camposSql = camposSql + ",complemento";
+                valoresSql = valoresSql + ",'" + txt_complemento.Text + "'";
+            }
+            if (txt_bairro.Text != "")
+            {
+                camposSql = camposSql + ",bairro";
+                valoresSql = valoresSql + ",'" + txt_bairro.Text + "'";
+            }
+            if (txt_cidade.Text != "")
+            {
+                camposSql = camposSql + ",cidade";
+                valoresSql = valoresSql + ",'" + txt_cidade.Text + "'";
+            }
+            if (txt_uf.Text != "")
+            {
+                camposSql = camposSql + ",estado";
+                valoresSql = valoresSql + ",'" + txt_uf.Text + "'";
+            }
+            if (msk_telefone.Text != "(  )      -")
+            {
+                camposSql = camposSql + ",telefone";
+                valoresSql = valoresSql + ",'" + Metodos.getStringTelefone(msk_telefone) + "'";
+            }
+            try
+            {
+                conex.ComandoSql("insert into clientes (" + camposSql + ") values (" + valoresSql + ")");
+                if (check_funcionario.Checked) conex.ComandoSql(insertFuncionario);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            MessageBox.Show("Cliente Adicionado!");
+            this.Close();
+        }
+
+        private void editaCliente() //arrumar pra editar
+        {
             String camposSql = "";
             String valoresSql = "";
             String insertFuncionario = "";
@@ -86,16 +211,13 @@ namespace Projeto_André.Forms
             else
             {
                 camposSql = camposSql + ",cpf";
-                valoresSql = valoresSql +  ",'" +  msk_cpf.Text + "'";
+                valoresSql = valoresSql + ",'" + msk_cpf.Text + "'";
             }
             reader.Close();
             if (data_nascimento.Checked)
             {
-                data_nascimento.Format = DateTimePickerFormat.Custom;
-                String data = data_nascimento.Text;
-                data_nascimento.Format = DateTimePickerFormat.Short;
                 camposSql = camposSql + ",nascimento";
-                valoresSql = valoresSql + ",'" + data + "'";
+                valoresSql = valoresSql + ",'" + Metodos.getStringData(data_nascimento) + "'";
             }
             if (check_funcionario.Checked)
             {
@@ -104,7 +226,7 @@ namespace Projeto_André.Forms
                     MessageBox.Show("Selecionado para ser funcionário, necessário informar usuário e senha válidos");
                     return;
                 }
-                conex.ComandoSql("select codigo from usuarios where user = '" + txt_usuario.Text + "'");
+                conex.ComandoSql("select codigo from usuarios where cancelado is null and user = '" + txt_usuario.Text + "'");
                 conex.cnn.Open();
                 reader = conex.comandoProSql.ExecuteReader();
                 reader.Read();
@@ -114,10 +236,10 @@ namespace Projeto_André.Forms
                     return;
                 }
                 reader.Close();
-                camposSql = camposSql + "',funcionario, funcionarioUser'";
-                valoresSql = valoresSql + ", 1, '" + txt_usuario.Text + "'"; 
+                camposSql = camposSql + ",funcionario, funcionarioUser";
+                valoresSql = valoresSql + ", 1, '" + txt_usuario.Text + "'";
                 insertFuncionario = "insert into usuarios (user,senha,codigoCliente) values ('" + txt_usuario.Text + "','" + txt_senha.Text + "'," + txt_codigo.Text + ")";
-                
+
             }
             if (txt_endereco.Text != "")
             {
@@ -132,7 +254,7 @@ namespace Projeto_André.Forms
             if (txt_complemento.Text != "")
             {
                 camposSql = camposSql + ",complemento";
-                valoresSql = valoresSql + ",'" + txt_complemento.Text +"'";
+                valoresSql = valoresSql + ",'" + txt_complemento.Text + "'";
             }
             if (txt_bairro.Text != "")
             {
@@ -146,19 +268,24 @@ namespace Projeto_André.Forms
             }
             if (txt_uf.Text != "")
             {
-                camposSql = camposSql + ",uf";
+                camposSql = camposSql + ",estado";
                 valoresSql = valoresSql + ",'" + txt_uf.Text + "'";
             }
             if (msk_telefone.Text != "(  )      -")
             {
                 camposSql = camposSql + ",telefone";
-                valoresSql = valoresSql + ",'" + msk_telefone.Text + "'";
+                valoresSql = valoresSql + ",'" + Metodos.getStringTelefone(msk_telefone) + "'";
             }
-            
-            conex.ComandoSql("insert into clientes (" + camposSql + ") values (" + valoresSql + ")");
-            if (check_funcionario.Checked) conex.ComandoSql(insertFuncionario);
-
-            MessageBox.Show("Cliente Adicionado!");
+            try
+            {
+                conex.ComandoSql("insert into clientes (" + camposSql + ") values (" + valoresSql + ")");
+                if (check_funcionario.Checked) conex.ComandoSql(insertFuncionario);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            MessageBox.Show("Cliente Editado!");
             this.Close();
         }
 
@@ -259,14 +386,36 @@ namespace Projeto_André.Forms
         private void alteraCliente()
         {
             //tem que adicionar as coisas do COMPLEMENTAR tbm
-            conex.ComandoSql("select * from usuarios where codigo = " + codigo);
+            conex.ComandoSql("select nome,cpf,nascimento,funcionario,funcionarioUser,endereco,numero,complemento,bairro,cidade,estado,telefone from clientes where codigo = " + codigo);
             conex.cnn.Open();
             reader = conex.comandoProSql.ExecuteReader();
             reader.Read();
 
             txt_nome.Text = reader.GetString(0);
             msk_cpf.Text = reader.GetString(1);
+            try
+            {
+                if (reader.GetString(2) != "")
+                {
+                    data_nascimento.Checked = true;
+                    data_nascimento.Format = DateTimePickerFormat.Custom;
+                    data_nascimento.Text = reader.GetString(2);
+                    data_nascimento.Format = DateTimePickerFormat.Short;
+                }
+                check_funcionario.Checked = reader.GetBoolean(3);
+                txt_usuario.Text = reader.GetString(4);
+                txt_endereco.Text = reader.GetString(5);
+                msk_numero.Text = reader.GetInt32(6) + "";
+                txt_complemento.Text = reader.GetString(7);
+                txt_bairro.Text = reader.GetString(8);
+                txt_cidade.Text = reader.GetString(9);
+                txt_uf.Text = reader.GetString(10);
+                msk_telefone.Text = reader.GetString(11);
+            }
+            catch
+            {
 
+            }
 
             reader.Close();
         }
