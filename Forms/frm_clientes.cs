@@ -116,6 +116,12 @@ namespace Projeto_André.Foms
             reader.Read();
             reader.Close();
             MessageBox.Show(cmd);
+
+            if (DialogResult.Yes == MessageBox.Show("Deseja excluir o cliente?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2))
+            {
+                cmd = "update clientes set cancelado = 1 where codigo = " + grid_clientes.CurrentRow.Cells[0].Value.ToString();
+                conex.ComandoSql(cmd);
+            }
         }
 
         private void bt_editar_Click(object sender, EventArgs e)

@@ -24,7 +24,7 @@ namespace Projeto_André.Classes
         public MySqlCommand comandoProSql = new MySqlCommand();
         public MySqlDataReader reader;
         public Boolean conectado = false;
-        
+        // compile with: /reference:cs0012b.dll  
 
 
         public void Execute()
